@@ -1,3 +1,100 @@
+# MAKOINSTA
+
+## 概要
+やったこと
+GitHubを用いたログイン機能の実装(/github)
+→ログイン画面の体裁完了
+データベースを用いて投稿した内容を表示(/home)
+→四角で中央
+投稿ページ作成(/bbs)
+→名前、コメントはデータベースに保存され投稿ページにいける
+固定ヘッダーの作成
+→固定ヘッダーにホーム、ログイン、投稿ページに行けるよう設定
+
+
+やること
+プロフィール画面の作成
+→GitHubのプロフィール画像が引継げず表示できない
+→Githubのデータがどうなっているのかよく分からない
+→画像表示while(if(3回<br>(投稿画像)))で実装予定
+ログイン・ログアウトの分岐
+→ログイン状態のとき固定ヘッダー(if文予定)
+aseetの様に固定ヘッダーを呼び出す
+データベースに名前+コメントに加え画像を追加する
+ユーザが複数の場合どうなるのか(複数の実装方法をどうするか)
+いいねの実装
+→いいねしたユーザの一覧(複数で実装できないためどう確認するか)
+ホームページ使用なので携帯にも対応させる様な仕様にする
+
+## 工夫した点
+
+assetを使いcssやimgを呼び出しソースコードが見やすいように
+→固定ヘッダーに使用(固定ヘッダーjs追加予定)
+フッターを追加
+固定ヘッダーをインスタっぽく題名を付与
+
+## 起動・停止
+
+起動
+```
+$ docker-compose up -d
+```
+
+停止
+```
+$ docker-compose down
+```
+
+## URL
+
+index.php  
+http://localhost:9000
+
+pgadmin  
+http://localhost:5050
+
+
+## ディレクトリ構成
+* phpなコンテンツは./appに配置となります
+* nginxの設定は./nginx/site.conf
+
+```
+.
+├── app
+│   └── index.php
+├── nginx
+│   └── site.conf
+├── pgadmin
+├── pgsql
+│   └── data
+│       └── .gitkeep
+├── docker-compose.yml
+├── .gitignore
+└── README.md
+```
+
+## pgadminへの接続
+デフォルトのログインアカウントは以下の通り
+```
+USER：user@domain.com
+PASS：SuperSecret
+```
+
+データベースの追加は以下の通り
+```
+サーバー名：自由に決めて
+HOSTNAME：pgsql
+DBNAME：postgres
+USERNAME：postgres
+PASSWORD：example
+PORT:5432
+```
+
+
+
+
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
