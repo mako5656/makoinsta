@@ -6,7 +6,6 @@
 </head>
 <body>
 
-
 <header class="site-header">
     <h1 class="site-logo"><img src="{{ asset('/img/logogo.png') }}" >MAKOINSTA</h1>
     <nav class="gnav">
@@ -17,6 +16,7 @@
         </ul>
     </nav>
 </header>
+
 <div class="hero"><img src="{{ asset('/img/logo.jpg') }}" alt="hero"></div>
 <div class="content">
     <h1>掲示板</h1>
@@ -30,6 +30,12 @@
         @endforeach
     </ul>
 @endif
+
+    @isset ($filename)
+    <div>
+        <img src="{{ asset('storage/' . $filename) }}"width="300" height="200">
+    </div>
+    @endisset
 
 <!-- 投稿表示エリア（編集するのはここ！） -->
 @isset($bbs)
